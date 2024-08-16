@@ -9,6 +9,6 @@ BEGIN
 END
 $$;
 
-ALTER FUNCTION core.sf_version_to_number(_c_version text) OWNER TO sdss;
+ALTER FUNCTION core.sf_version_to_number(_c_version text) OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.sf_version_to_number(_c_version text) IS 'Преобразование версии в число';

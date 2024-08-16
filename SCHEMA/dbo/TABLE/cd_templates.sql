@@ -9,7 +9,7 @@ CREATE TABLE dbo.cd_templates (
 	c_print text
 );
 
-ALTER TABLE dbo.cd_templates OWNER TO sdss;
+ALTER TABLE dbo.cd_templates OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.cd_templates IS 'Шаблоны результатов';
 

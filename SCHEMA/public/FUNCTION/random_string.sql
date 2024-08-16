@@ -16,4 +16,4 @@ begin
 end;
 $_$;
 
-ALTER FUNCTION public.random_string(length integer) OWNER TO sdss;
+ALTER FUNCTION public.random_string(length integer) OWNER TO mobwal;

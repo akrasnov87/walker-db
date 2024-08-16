@@ -6,7 +6,7 @@ CREATE TABLE core.sd_sys_log (
 	c_data text
 );
 
-ALTER TABLE core.sd_sys_log OWNER TO sdss;
+ALTER TABLE core.sd_sys_log OWNER TO mobwal;
 
 COMMENT ON TABLE core.sd_sys_log IS 'Системное логирование';
 

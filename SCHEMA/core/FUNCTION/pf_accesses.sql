@@ -23,6 +23,6 @@ BEGIN
 END;
 $$;
 
-ALTER FUNCTION core.pf_accesses(n_user_id integer) OWNER TO sdss;
+ALTER FUNCTION core.pf_accesses(n_user_id integer) OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.pf_accesses(n_user_id integer) IS 'Системная функция. Получение прав доступа для пользователя. Используется "vaccine-node"JS';

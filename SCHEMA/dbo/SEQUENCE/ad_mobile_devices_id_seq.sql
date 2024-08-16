@@ -5,4 +5,4 @@ CREATE SEQUENCE dbo.ad_mobile_devices_id_seq
 	NO MINVALUE
 	CACHE 1;
 
-ALTER SEQUENCE dbo.ad_mobile_devices_id_seq OWNER TO sdss;
+ALTER SEQUENCE dbo.ad_mobile_devices_id_seq OWNER TO mobwal;

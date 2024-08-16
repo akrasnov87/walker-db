@@ -4,7 +4,7 @@ CREATE TABLE core.sd_table_change_ref (
 	c_table_name_ref text NOT NULL
 );
 
-ALTER TABLE core.sd_table_change_ref OWNER TO sdss;
+ALTER TABLE core.sd_table_change_ref OWNER TO mobwal;
 
 COMMENT ON TABLE core.sd_table_change_ref IS 'Зависимость таблиц состояний';
 

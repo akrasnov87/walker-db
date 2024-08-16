@@ -11,7 +11,7 @@ CREATE TABLE core.sd_settings (
 	b_disabled boolean DEFAULT false NOT NULL
 );
 
-ALTER TABLE core.sd_settings OWNER TO sdss;
+ALTER TABLE core.sd_settings OWNER TO mobwal;
 
 COMMENT ON TABLE core.sd_settings IS 'Основные настройки';
 

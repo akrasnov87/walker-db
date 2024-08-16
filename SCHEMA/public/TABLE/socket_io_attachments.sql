@@ -4,7 +4,7 @@ CREATE TABLE public.socket_io_attachments (
 	payload bytea
 );
 
-ALTER TABLE public.socket_io_attachments OWNER TO sdss;
+ALTER TABLE public.socket_io_attachments OWNER TO mobwal;
 
 COMMENT ON TABLE public.socket_io_attachments IS 'Socket.IO';
 

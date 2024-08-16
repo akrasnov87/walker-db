@@ -6,14 +6,14 @@ CREATE TABLE dbo.sd_answers (
 	c_action text,
 	n_order integer DEFAULT 0 NOT NULL,
 	b_disabled boolean DEFAULT false NOT NULL,
-	c_created_user text DEFAULT 'sdss'::text,
+	c_created_user text DEFAULT 'mobwal'::text,
 	d_created_date timestamp without time zone DEFAULT now(),
 	c_change_user text,
 	d_change_date timestamp without time zone,
 	c_tag text
 );
 
-ALTER TABLE dbo.sd_answers OWNER TO sdss;
+ALTER TABLE dbo.sd_answers OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.sd_answers IS 'Варианты ответов';
 

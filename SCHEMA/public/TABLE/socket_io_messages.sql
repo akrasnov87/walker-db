@@ -10,7 +10,7 @@ CREATE TABLE public.socket_io_messages (
 	dx_delivered timestamp without time zone
 );
 
-ALTER TABLE public.socket_io_messages OWNER TO sdss;
+ALTER TABLE public.socket_io_messages OWNER TO mobwal;
 
 --------------------------------------------------------------------------------
 

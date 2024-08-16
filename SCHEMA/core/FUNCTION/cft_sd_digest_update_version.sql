@@ -10,6 +10,6 @@ BEGIN
 END
 $$;
 
-ALTER FUNCTION core.cft_sd_digest_update_version() OWNER TO sdss;
+ALTER FUNCTION core.cft_sd_digest_update_version() OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.cft_sd_digest_update_version() IS 'Триггер. Обновления версии приложения';

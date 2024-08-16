@@ -5,7 +5,7 @@ CREATE SEQUENCE public.socket_io_attachments_id_seq
 	NO MINVALUE
 	CACHE 1;
 
-ALTER SEQUENCE public.socket_io_attachments_id_seq OWNER TO sdss;
+ALTER SEQUENCE public.socket_io_attachments_id_seq OWNER TO mobwal;
 
 ALTER SEQUENCE public.socket_io_attachments_id_seq
 	OWNED BY public.socket_io_attachments.id;

@@ -28,6 +28,6 @@ BEGIN
 END
 $$;
 
-ALTER FUNCTION dbo.sf_reset_route(_f_route uuid) OWNER TO sdss;
+ALTER FUNCTION dbo.sf_reset_route(_f_route uuid) OWNER TO mobwal;
 
 COMMENT ON FUNCTION dbo.sf_reset_route(_f_route uuid) IS 'Функция по сбросу маршрута';

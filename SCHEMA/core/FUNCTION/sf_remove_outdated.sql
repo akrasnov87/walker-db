@@ -36,6 +36,6 @@ BEGIN
 END;
 $$;
 
-ALTER FUNCTION core.sf_remove_outdated() OWNER TO sdss;
+ALTER FUNCTION core.sf_remove_outdated() OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.sf_remove_outdated() IS 'Процедура очистки устаревших данных';

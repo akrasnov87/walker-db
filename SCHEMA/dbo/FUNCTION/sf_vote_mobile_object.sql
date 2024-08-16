@@ -30,6 +30,6 @@ BEGIN
 END;
 $$;
 
-ALTER FUNCTION dbo.sf_vote_mobile_object(_question_id integer) OWNER TO sdss;
+ALTER FUNCTION dbo.sf_vote_mobile_object(_question_id integer) OWNER TO mobwal;
 
 COMMENT ON FUNCTION dbo.sf_vote_mobile_object(_question_id integer) IS 'Опрос для мобильного приложения';

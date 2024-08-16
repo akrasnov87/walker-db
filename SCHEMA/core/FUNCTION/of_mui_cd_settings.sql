@@ -19,6 +19,6 @@ BEGIN
 END
 $$;
 
-ALTER FUNCTION core.of_mui_cd_settings(sender jsonb, _c_version text) OWNER TO sdss;
+ALTER FUNCTION core.of_mui_cd_settings(sender jsonb, _c_version text) OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.of_mui_cd_settings(sender jsonb, _c_version text) IS 'Настройки для мобильного приложения';

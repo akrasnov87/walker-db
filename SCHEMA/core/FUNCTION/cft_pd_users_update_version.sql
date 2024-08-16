@@ -13,6 +13,6 @@ BEGIN
 END
 $$;
 
-ALTER FUNCTION core.cft_pd_users_update_version() OWNER TO sdss;
+ALTER FUNCTION core.cft_pd_users_update_version() OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.cft_pd_users_update_version() IS 'Триггер. Обновление версии в пользователях';

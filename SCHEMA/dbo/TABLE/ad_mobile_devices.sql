@@ -15,7 +15,7 @@ CREATE TABLE dbo.ad_mobile_devices (
 	c_device_id uuid
 );
 
-ALTER TABLE dbo.ad_mobile_devices OWNER TO sdss;
+ALTER TABLE dbo.ad_mobile_devices OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.ad_mobile_devices IS 'Информация о мобильных устройствах';
 

@@ -18,7 +18,7 @@ CREATE TABLE dbo.cd_points (
 	jb_ext jsonb
 );
 
-ALTER TABLE dbo.cd_points OWNER TO sdss;
+ALTER TABLE dbo.cd_points OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.cd_points IS 'Точки';
 

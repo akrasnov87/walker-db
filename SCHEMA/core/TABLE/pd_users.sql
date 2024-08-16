@@ -16,7 +16,7 @@ CREATE TABLE core.pd_users (
 	d_expired_date date
 );
 
-ALTER TABLE core.pd_users OWNER TO sdss;
+ALTER TABLE core.pd_users OWNER TO mobwal;
 
 COMMENT ON TABLE core.pd_users IS 'Пользователи / Организации';
 

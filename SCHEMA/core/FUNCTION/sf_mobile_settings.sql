@@ -12,6 +12,6 @@ BEGIN
 END;
 $$;
 
-ALTER FUNCTION core.sf_mobile_settings() OWNER TO sdss;
+ALTER FUNCTION core.sf_mobile_settings() OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.sf_mobile_settings() IS 'получение настроек для мобильного приложения';

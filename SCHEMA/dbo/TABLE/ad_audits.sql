@@ -7,7 +7,7 @@ CREATE TABLE dbo.ad_audits (
 	c_session_id uuid NOT NULL
 );
 
-ALTER TABLE dbo.ad_audits OWNER TO sdss;
+ALTER TABLE dbo.ad_audits OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.ad_audits IS 'Действия пользователя';
 

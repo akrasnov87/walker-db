@@ -19,7 +19,7 @@ CREATE TABLE dbo.cd_attachments (
 	c_extension text
 );
 
-ALTER TABLE dbo.cd_attachments OWNER TO sdss;
+ALTER TABLE dbo.cd_attachments OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.cd_attachments IS 'Файлы';
 

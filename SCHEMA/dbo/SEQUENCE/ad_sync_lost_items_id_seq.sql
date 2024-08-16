@@ -5,7 +5,7 @@ CREATE SEQUENCE dbo.ad_sync_lost_items_id_seq
 	NO MINVALUE
 	CACHE 1;
 
-ALTER SEQUENCE dbo.ad_sync_lost_items_id_seq OWNER TO sdss;
+ALTER SEQUENCE dbo.ad_sync_lost_items_id_seq OWNER TO mobwal;
 
 ALTER SEQUENCE dbo.ad_sync_lost_items_id_seq
 	OWNED BY dbo.ad_sync_lost_items.id;

@@ -6,7 +6,7 @@ CREATE SEQUENCE dbo.sd_questions_id_seq
 	NO MINVALUE
 	CACHE 1;
 
-ALTER SEQUENCE dbo.sd_questions_id_seq OWNER TO sdss;
+ALTER SEQUENCE dbo.sd_questions_id_seq OWNER TO mobwal;
 
 ALTER SEQUENCE dbo.sd_questions_id_seq
 	OWNED BY dbo.sd_questions.id;

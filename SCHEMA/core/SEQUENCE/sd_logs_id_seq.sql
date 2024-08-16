@@ -5,7 +5,7 @@ CREATE SEQUENCE core.sd_logs_id_seq
 	NO MINVALUE
 	CACHE 1;
 
-ALTER SEQUENCE core.sd_logs_id_seq OWNER TO sdss;
+ALTER SEQUENCE core.sd_logs_id_seq OWNER TO mobwal;
 
 ALTER SEQUENCE core.sd_logs_id_seq
 	OWNED BY core.sd_logs.id;

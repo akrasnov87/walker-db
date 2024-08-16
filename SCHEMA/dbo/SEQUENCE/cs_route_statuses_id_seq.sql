@@ -6,7 +6,7 @@ CREATE SEQUENCE dbo.cs_route_statuses_id_seq
 	NO MINVALUE
 	CACHE 1;
 
-ALTER SEQUENCE dbo.cs_route_statuses_id_seq OWNER TO sdss;
+ALTER SEQUENCE dbo.cs_route_statuses_id_seq OWNER TO mobwal;
 
 ALTER SEQUENCE dbo.cs_route_statuses_id_seq
 	OWNED BY dbo.cs_route_statuses.id;

@@ -13,6 +13,6 @@ BEGIN
 END;
 $$;
 
-ALTER FUNCTION dbo.sf_storage_item(_f_storage uuid) OWNER TO sdss;
+ALTER FUNCTION dbo.sf_storage_item(_f_storage uuid) OWNER TO mobwal;
 
 COMMENT ON FUNCTION dbo.sf_storage_item(_f_storage uuid) IS 'Процедура элемента хранилища';

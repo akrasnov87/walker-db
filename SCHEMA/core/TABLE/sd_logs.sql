@@ -5,7 +5,7 @@ CREATE TABLE core.sd_logs (
 	d_time time without time zone NOT NULL
 );
 
-ALTER TABLE core.sd_logs OWNER TO sdss;
+ALTER TABLE core.sd_logs OWNER TO mobwal;
 
 --------------------------------------------------------------------------------
 

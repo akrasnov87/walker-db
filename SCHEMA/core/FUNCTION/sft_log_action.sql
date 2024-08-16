@@ -27,6 +27,6 @@ EXCEPTION
 END;
 $$;
 
-ALTER FUNCTION core.sft_log_action() OWNER TO sdss;
+ALTER FUNCTION core.sft_log_action() OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.sft_log_action() IS 'Триггер. Процедура логирования действия пользователя';

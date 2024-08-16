@@ -16,7 +16,7 @@ CREATE TABLE core.pd_accesses (
 	d_change_date timestamp without time zone
 );
 
-ALTER TABLE core.pd_accesses OWNER TO sdss;
+ALTER TABLE core.pd_accesses OWNER TO mobwal;
 
 COMMENT ON TABLE core.pd_accesses IS 'Права доступа';
 

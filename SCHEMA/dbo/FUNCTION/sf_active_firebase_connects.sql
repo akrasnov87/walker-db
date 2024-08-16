@@ -28,6 +28,6 @@ BEGIN
 END
 $$;
 
-ALTER FUNCTION dbo.sf_active_firebase_connects(user_id integer) OWNER TO sdss;
+ALTER FUNCTION dbo.sf_active_firebase_connects(user_id integer) OWNER TO mobwal;
 
 COMMENT ON FUNCTION dbo.sf_active_firebase_connects(user_id integer) IS 'Получение списка активных токенов';

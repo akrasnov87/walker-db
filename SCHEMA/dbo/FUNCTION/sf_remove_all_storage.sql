@@ -9,6 +9,6 @@ BEGIN
 END;
 $$;
 
-ALTER FUNCTION dbo.sf_remove_all_storage(_f_user bigint) OWNER TO sdss;
+ALTER FUNCTION dbo.sf_remove_all_storage(_f_user bigint) OWNER TO mobwal;
 
 COMMENT ON FUNCTION dbo.sf_remove_all_storage(_f_user bigint) IS 'Процедура удаления хранилища';

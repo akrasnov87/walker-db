@@ -8,7 +8,7 @@ CREATE TABLE core.pd_userinroles (
 	d_change_date timestamp without time zone
 );
 
-ALTER TABLE core.pd_userinroles OWNER TO sdss;
+ALTER TABLE core.pd_userinroles OWNER TO mobwal;
 
 COMMENT ON TABLE core.pd_userinroles IS 'Пользователи в ролях';
 

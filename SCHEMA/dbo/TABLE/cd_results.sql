@@ -14,7 +14,7 @@ CREATE TABLE dbo.cd_results (
 	b_disabled boolean DEFAULT false NOT NULL
 );
 
-ALTER TABLE dbo.cd_results OWNER TO sdss;
+ALTER TABLE dbo.cd_results OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.cd_results IS 'Результат выполнения';
 

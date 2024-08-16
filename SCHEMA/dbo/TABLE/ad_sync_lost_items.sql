@@ -8,7 +8,7 @@ CREATE TABLE dbo.ad_sync_lost_items (
 	c_session_id uuid NOT NULL
 );
 
-ALTER TABLE dbo.ad_sync_lost_items OWNER TO sdss;
+ALTER TABLE dbo.ad_sync_lost_items OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.ad_sync_lost_items IS 'Гео-трекинг';
 

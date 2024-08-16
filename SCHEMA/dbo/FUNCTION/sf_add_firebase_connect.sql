@@ -25,6 +25,6 @@ BEGIN
 END
 $$;
 
-ALTER FUNCTION dbo.sf_add_firebase_connect(sender jsonb, params jsonb) OWNER TO sdss;
+ALTER FUNCTION dbo.sf_add_firebase_connect(sender jsonb, params jsonb) OWNER TO mobwal;
 
 COMMENT ON FUNCTION dbo.sf_add_firebase_connect(sender jsonb, params jsonb) IS 'Добавление подключения к firebase';

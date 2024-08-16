@@ -18,6 +18,6 @@ BEGIN
 END;
 $$;
 
-ALTER FUNCTION core.sf_users_by_login(_c_login text) OWNER TO sdss;
+ALTER FUNCTION core.sf_users_by_login(_c_login text) OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.sf_users_by_login(_c_login text) IS 'Системная функция. Получение информации о пользователе';

@@ -30,6 +30,6 @@ BEGIN
 END;
 $$;
 
-ALTER FUNCTION core.sf_users(_f_user integer) OWNER TO sdss;
+ALTER FUNCTION core.sf_users(_f_user integer) OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.sf_users(_f_user integer) IS 'Системная функция. Получение информации о пользователе';

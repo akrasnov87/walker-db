@@ -38,6 +38,6 @@ BEGIN
 END
 $$;
 
-ALTER FUNCTION dbo.of_mui_sync_need(sender jsonb, params jsonb) OWNER TO sdss;
+ALTER FUNCTION dbo.of_mui_sync_need(sender jsonb, params jsonb) OWNER TO mobwal;
 
 COMMENT ON FUNCTION dbo.of_mui_sync_need(sender jsonb, params jsonb) IS 'Проверка на потребность в синхронизации: получение обновлённой информации по заданиям';

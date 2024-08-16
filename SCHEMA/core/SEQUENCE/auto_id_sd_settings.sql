@@ -5,4 +5,4 @@ CREATE SEQUENCE core.auto_id_sd_settings
 	NO MINVALUE
 	CACHE 1;
 
-ALTER SEQUENCE core.auto_id_sd_settings OWNER TO sdss;
+ALTER SEQUENCE core.auto_id_sd_settings OWNER TO mobwal;

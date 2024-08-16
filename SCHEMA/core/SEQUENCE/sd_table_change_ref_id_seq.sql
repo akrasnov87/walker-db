@@ -6,7 +6,7 @@ CREATE SEQUENCE core.sd_table_change_ref_id_seq
 	NO MINVALUE
 	CACHE 1;
 
-ALTER SEQUENCE core.sd_table_change_ref_id_seq OWNER TO sdss;
+ALTER SEQUENCE core.sd_table_change_ref_id_seq OWNER TO mobwal;
 
 ALTER SEQUENCE core.sd_table_change_ref_id_seq
 	OWNED BY core.sd_table_change_ref.id;

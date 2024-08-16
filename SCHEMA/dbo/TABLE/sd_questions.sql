@@ -4,7 +4,7 @@ CREATE TABLE dbo.sd_questions (
 	c_notice text,
 	n_order integer DEFAULT 0 NOT NULL,
 	b_disabled boolean DEFAULT false NOT NULL,
-	c_created_user text DEFAULT 'sdss'::text,
+	c_created_user text DEFAULT 'mobwal'::text,
 	d_created_date timestamp without time zone DEFAULT now(),
 	c_change_user text,
 	d_change_date timestamp without time zone,
@@ -12,7 +12,7 @@ CREATE TABLE dbo.sd_questions (
 	c_group text
 );
 
-ALTER TABLE dbo.sd_questions OWNER TO sdss;
+ALTER TABLE dbo.sd_questions OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.sd_questions IS 'Вопросы';
 

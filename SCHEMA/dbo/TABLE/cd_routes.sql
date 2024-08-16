@@ -11,7 +11,7 @@ CREATE TABLE dbo.cd_routes (
 	jb_data jsonb
 );
 
-ALTER TABLE dbo.cd_routes OWNER TO sdss;
+ALTER TABLE dbo.cd_routes OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.cd_routes IS 'Маршруты';
 

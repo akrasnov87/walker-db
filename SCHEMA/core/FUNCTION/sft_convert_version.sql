@@ -10,6 +10,6 @@ BEGIN
 END;
 $$;
 
-ALTER FUNCTION core.sft_convert_version() OWNER TO sdss;
+ALTER FUNCTION core.sft_convert_version() OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.sft_convert_version() IS 'Триггер. Обновления версии приложения';

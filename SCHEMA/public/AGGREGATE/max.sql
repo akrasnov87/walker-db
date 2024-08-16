@@ -3,4 +3,4 @@ CREATE AGGREGATE public.max(uuid) (
 	STYPE = uuid
 );
 
-ALTER AGGREGATE public.max(uuid) OWNER TO sdss;
+ALTER AGGREGATE public.max(uuid) OWNER TO mobwal;

@@ -39,6 +39,6 @@ BEGIN
 END
 $$;
 
-ALTER FUNCTION core.sf_verify_user(jb_user jsonb, version_code text) OWNER TO sdss;
+ALTER FUNCTION core.sf_verify_user(jb_user jsonb, version_code text) OWNER TO mobwal;
 
 COMMENT ON FUNCTION core.sf_verify_user(jb_user jsonb, version_code text) IS 'Проверка пользователя на авторизацию';

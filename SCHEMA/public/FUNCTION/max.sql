@@ -10,4 +10,4 @@ BEGIN
 END;
 $_$;
 
-ALTER FUNCTION public.max(uuid, uuid) OWNER TO sdss;
+ALTER FUNCTION public.max(uuid, uuid) OWNER TO mobwal;

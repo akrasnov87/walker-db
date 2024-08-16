@@ -6,7 +6,7 @@ CREATE TABLE dbo.cs_route_statuses (
 	c_name text
 );
 
-ALTER TABLE dbo.cs_route_statuses OWNER TO sdss;
+ALTER TABLE dbo.cs_route_statuses OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.cs_route_statuses IS 'Тип результат';
 

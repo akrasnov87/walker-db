@@ -34,6 +34,6 @@ BEGIN
 END
 $$;
 
-ALTER FUNCTION dbo.of_mui_cd_results(sender jsonb, _c_version text) OWNER TO sdss;
+ALTER FUNCTION dbo.of_mui_cd_results(sender jsonb, _c_version text) OWNER TO mobwal;
 
 COMMENT ON FUNCTION dbo.of_mui_cd_results(sender jsonb, _c_version text) IS 'Список результатов';

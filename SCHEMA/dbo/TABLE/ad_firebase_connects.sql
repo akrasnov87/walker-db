@@ -6,7 +6,7 @@ CREATE TABLE dbo.ad_firebase_connects (
 	d_time time without time zone DEFAULT now()
 );
 
-ALTER TABLE dbo.ad_firebase_connects OWNER TO sdss;
+ALTER TABLE dbo.ad_firebase_connects OWNER TO mobwal;
 
 COMMENT ON TABLE dbo.ad_firebase_connects IS 'История соединения по TCP';
 

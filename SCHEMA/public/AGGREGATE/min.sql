@@ -3,4 +3,4 @@ CREATE AGGREGATE public.min(uuid) (
 	STYPE = uuid
 );
 
-ALTER AGGREGATE public.min(uuid) OWNER TO sdss;
+ALTER AGGREGATE public.min(uuid) OWNER TO mobwal;
