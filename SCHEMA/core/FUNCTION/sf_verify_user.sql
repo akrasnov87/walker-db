@@ -9,8 +9,21 @@ DECLARE
 	_f_user_without_device	integer;
 	_d_expired_date			date;
 	_c_login				text;
+	_is_device				boolean; -- авторизация происходит через вспомогательные устроства (код)
 BEGIN
+	SELECT (jb_user#>>'{isDevice}')::boolean INTO _is_device;
 	SELECT (jb_user#>>'{c_login}')::text INTO _c_login;
+
+	IF _is_device THEN
+		SELECT u.c_login INTO _c_login
+		FROM core.pd_devices AS d
+		INNER JOIN core.pd_users AS u ON u.id = d.f_user
+		WHERE d.c_serial_number = _c_login;
+	END IF;
+
+	IF _c_login IS NULL THEN
+		RETURN null;
+	END IF;
 	
 	-- проверяем блокировку
 	SELECT u.d_expired_date INTO _d_expired_date 
