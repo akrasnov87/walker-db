@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION dbo.of_mui_cd_templates(sender jsonb, _c_version text) RETURNS TABLE(id uuid, c_name text, c_template text, c_layout text, c_description text, n_order integer)
+CREATE OR REPLACE FUNCTION dbo.of_mui_cd_templates(sender jsonb, _c_version text) RETURNS TABLE(c_name text, c_template text, c_layout text, c_description text, n_order integer)
     LANGUAGE plpgsql STABLE ROWS 10
     AS $$
 /**
@@ -11,7 +11,6 @@ CREATE OR REPLACE FUNCTION dbo.of_mui_cd_templates(sender jsonb, _c_version text
 BEGIN
     RETURN QUERY 
 	select
-		t.id,
 		t.c_name,
 		t.c_template,
 		t.c_layout,

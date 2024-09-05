@@ -12,7 +12,7 @@ CREATE TABLE core.pd_users (
 	c_created_user text DEFAULT 'walker'::text NOT NULL,
 	d_change_date timestamp without time zone,
 	c_change_user text,
-	_id text,
+	budibase_user_id text,
 	d_expired_date date
 );
 
@@ -44,7 +44,7 @@ COMMENT ON COLUMN core.pd_users.d_change_date IS 'Дата обновления 
 
 COMMENT ON COLUMN core.pd_users.c_change_user IS 'Логин пользователья изменившего запись';
 
-COMMENT ON COLUMN core.pd_users._id IS 'Идентификатор внешней системы';
+COMMENT ON COLUMN core.pd_users.budibase_user_id IS 'Идентификатор внешней системы';
 
 COMMENT ON COLUMN core.pd_users.d_expired_date IS 'Срок действия УЗ';
 

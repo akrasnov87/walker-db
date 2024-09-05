@@ -3,7 +3,7 @@ CREATE TABLE dbo.sd_answers (
 	c_text text NOT NULL,
 	f_question integer NOT NULL,
 	f_next_question integer,
-	c_action text,
+	f_action integer,
 	n_order integer DEFAULT 0 NOT NULL,
 	b_disabled boolean DEFAULT false NOT NULL,
 	c_created_user text DEFAULT 'mobwal'::text,
@@ -25,7 +25,7 @@ COMMENT ON COLUMN dbo.sd_answers.f_question IS 'ID вопроса';
 
 COMMENT ON COLUMN dbo.sd_answers.f_next_question IS 'ID след. вопроса, если есть';
 
-COMMENT ON COLUMN dbo.sd_answers.c_action IS 'Действия при нажатии на вариант ответа: COMMENT, CONTACT, RATING, FINISH';
+COMMENT ON COLUMN dbo.sd_answers.f_action IS 'Действия при нажатии на вариант ответа: COMMENT, CONTACT, RATING, FINISH';
 
 COMMENT ON COLUMN dbo.sd_answers.n_order IS 'Порядок следования';
 

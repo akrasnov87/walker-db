@@ -5,8 +5,8 @@ CREATE TABLE dbo.cd_points (
 	c_description text,
 	c_imp_id text,
 	n_order integer DEFAULT 0 NOT NULL,
-	n_longitude numeric(20,15),
-	n_latitude numeric(20,15),
+	n_longitude numeric(9,6),
+	n_latitude numeric(9,6),
 	jb_data jsonb,
 	b_anomaly boolean DEFAULT false NOT NULL,
 	b_check boolean DEFAULT true NOT NULL,
@@ -15,7 +15,8 @@ CREATE TABLE dbo.cd_points (
 	b_disabled boolean DEFAULT false NOT NULL,
 	f_collection uuid,
 	c_rfid text,
-	jb_ext jsonb
+	jb_ext jsonb,
+	n_height numeric(9,6)
 );
 
 ALTER TABLE dbo.cd_points OWNER TO mobwal;
