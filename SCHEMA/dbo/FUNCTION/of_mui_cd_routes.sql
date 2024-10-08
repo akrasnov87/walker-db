@@ -8,21 +8,36 @@ CREATE OR REPLACE FUNCTION dbo.of_mui_cd_routes(sender jsonb, _c_version text) R
 * @example
 * [{ "action": "of_mui_cd_routes", "schema": "dbo", "method": "Select", "data": [{ "params": [sender, _c_version] }], "type": "rpc", "tid": 0 }]
 */
+DECLARE
+	_c_min_version 		text;
 BEGIN
-    RETURN QUERY 
-	select 
-		r.id, 
-		r.c_name, 
-		r.c_description, 
-		r.c_templates,
-		r.dx_created,
-		r.d_date_expired,
-		r.jb_data::text
-	from dbo.cd_routes as r
-	inner join core.pd_users as u ON u.id = r.f_user
-	inner join dbo.cs_route_statuses as rs ON r.f_status = rs.id
-	where (r.f_user = (sender#>>'{id}')::bigint)
-	and rs.c_const = 'ASSIGNED' and r.d_date_expired::date >= now()::date;
+	IF dbo.sf_is_mobile_version_valid(_c_version) THEN
+	    RETURN QUERY 
+		select 
+			r.id, 
+			r.c_name, 
+			r.c_description, 
+			r.c_templates,
+			r.dx_created,
+			r.d_date_expired,
+			r.jb_data::text
+		from dbo.cd_userinroutes as uir
+		inner join core.pd_users as u on u.id = uir.f_user
+		inner join dbo.cd_routes as r on r.id = uir.f_route
+		where (uir.f_user = (sender#>>'{id}')::integer or u.c_login = (sender#>>'{c_level}')::text) and dbo.sf_is_mobile_route(r.id);
+	ELSE
+		SELECT c_value INTO _c_min_version FROM core.sd_settings AS s WHERE lower(s.c_key) = 'system.db_min_version_mobile';
+		
+		RETURN QUERY 
+			SELECT 	'00000000-0000-0000-0000-000000000000'::uuid, 
+					'Минимальная версия должна быть ' || coalesce(_c_min_version, '0.0.0.0'), 
+					'',
+					'',
+					now()::timestamp without time zone, 
+					now()::date, 
+					'{}';
+	END IF;
+	
 END
 $$;
 

@@ -8,12 +8,7 @@ CREATE OR REPLACE FUNCTION dbo.of_mui_cd_points(sender jsonb, _c_version text) R
 * @example
 * [{ "action": "of_mui_cd_points", "schema": "dbo", "method": "Select", "data": [{ "params": [sender, _c_version] }], "type": "rpc", "tid": 0 }]
 */
-DECLARE
-	_is_new_version			boolean = false; -- новая версия приложения
 BEGIN
-	-- 1.923.3.390
-	SELECT core.sf_version_to_number(_c_version) > 1329510 INTO _is_new_version;
-
     RETURN QUERY 
 		select p.id,
 			p.fn_route,
@@ -22,24 +17,18 @@ BEGIN
 			p.n_order,
 			p.n_longitude,
 			p.n_latitude,
-			CASE 
-				WHEN _is_new_version THEN (p.jb_data - 'questions')::text
-				ELSE p.jb_data::text
-			END,
+			(p.jb_data - 'questions')::text,
 			p.b_anomaly,
 			p.b_check,
 			p.c_comment,
 			true,
 			p.b_disabled,
 			p.c_rfid
-		from dbo.cd_points as p
-		inner join dbo.cd_routes as r on r.id = p.fn_route
-		inner join core.pd_users as u ON u.id = r.f_user
-		inner join dbo.cs_route_statuses as rs ON r.f_status = rs.id
-		where p.b_disabled = false 
-		and (u.c_login = (sender#>>'{c_level}')::text
-		or r.f_user = (sender#>>'{id}')::bigint) 
-		and rs.c_const = 'ASSIGNED' and r.d_date_expired::date >= now()::date;
+		FROM dbo.cd_userinroutes AS uir
+		inner join core.pd_users as u on u.id = uir.f_user
+		inner join dbo.cd_routes AS r ON r.id = uir.f_route
+		inner join dbo.cd_points AS p ON p.fn_route = r.id
+		where p.b_disabled = false and (u.c_login = (sender#>>'{c_level}')::text or uir.f_user = (sender#>>'{id}')::integer) AND dbo.sf_is_mobile_route(r.id);
 END
 $$;
 

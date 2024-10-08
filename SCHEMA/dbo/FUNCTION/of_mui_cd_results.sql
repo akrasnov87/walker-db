@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION dbo.of_mui_cd_results(sender jsonb, _c_version text) RETURNS TABLE(id uuid, fn_route uuid, fn_point uuid, fn_user bigint, d_date timestamp without time zone, n_longitude numeric, n_latitude numeric, jb_data text, c_notice text, n_distance numeric, fn_template uuid, b_server boolean, b_disabled boolean)
+CREATE OR REPLACE FUNCTION dbo.of_mui_cd_results(sender jsonb, _c_version text) RETURNS TABLE(id uuid, fn_route uuid, fn_point uuid, fn_user integer, d_date timestamp without time zone, n_longitude numeric, n_latitude numeric, jb_data text, c_notice text, n_distance numeric, c_template text, b_server boolean, b_disabled boolean)
     LANGUAGE plpgsql STABLE
     AS $$
 /**
@@ -21,16 +21,15 @@ BEGIN
 		rr.jb_data::text,
 		rr.c_notice,
 		rr.n_distance,
-		rr.fn_template,
+		rr.c_template,
 		true,
 		rr.b_disabled
-	from dbo.cd_results as rr
-    inner join dbo.cd_routes as r on r.id = rr.fn_route
-	inner join core.pd_users as u ON u.id = r.f_user
-	inner join dbo.cs_route_statuses as rs ON r.f_status = rs.id
-	where (r.f_user = (sender#>>'{id}')::bigint or
-	u.c_login = (sender#>>'{c_level}')::text)
-	and rs.c_const = 'ASSIGNED' and r.d_date_expired::date >= now()::date;
+	FROM dbo.cd_userinroutes AS uir
+	inner join core.pd_users as u on u.id = uir.f_user
+	inner join dbo.cd_routes AS r ON r.id = uir.f_route
+	inner join dbo.cd_points AS p ON p.fn_route = r.id
+	inner join dbo.cd_results AS rr ON rr.fn_point = p.id
+	where (u.c_login = (sender#>>'{c_level}')::text or uir.f_user = (sender#>>'{id}')::integer) AND dbo.sf_is_mobile_route(r.id);
 END
 $$;
 

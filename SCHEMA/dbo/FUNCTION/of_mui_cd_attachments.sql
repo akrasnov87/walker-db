@@ -23,14 +23,11 @@ BEGIN
 		true,
 		a.b_disabled,
 		a.c_type
-	from dbo.cd_attachments as a
-	inner join dbo.cd_routes as r on r.id = a.fn_route
-	inner join core.pd_users as u ON u.id = r.f_user
-	inner join dbo.cs_route_statuses as rs on rs.id = r.f_status
-	where rs.c_const = 'ASSIGNED' 
-	and (u.c_login = (sender#>>'{c_level}')::text
-	or a.fn_user = (sender#>>'{id}')::bigint) 
-	and r.d_date_expired::date >= now()::date;
+	FROM dbo.cd_userinroutes AS uir
+	inner join core.pd_users as u on u.id = uir.f_user
+	inner join dbo.cd_routes AS r ON r.id = uir.f_route
+	inner join dbo.cd_attachments as a on a.fn_route = uir.f_route
+	where (u.c_login = (sender#>>'{c_level}')::text or uir.f_user = (sender#>>'{id}')::integer) AND dbo.sf_is_mobile_route(r.id);
 END
 $$;
 
