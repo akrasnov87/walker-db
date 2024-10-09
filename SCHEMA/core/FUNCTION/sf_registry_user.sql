@@ -17,6 +17,10 @@ BEGIN
 	FROM core.pd_roles AS r 
 	WHERE r.c_name = 'walker' AND (jb_user#>>'{"c_claims"}')::text ILIKE '%' || r._id || '%';
 
+	IF walkerId IS NULL THEN
+		RETURN NULL;
+	END IF;
+
 	INSERT INTO core.pd_users (c_login, c_email, b_disabled, d_last_auth_date, c_version, budibase_user_id, s_notice)
 	VALUES ((jb_user#>>'{"c_login"}')::text, 
 			(jb_user#>>'{"c_email"}')::text, 
